@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+
+
+    form#formAddPerson(name="/addperson",method="POST",action="/persons")
+
+        p Name:
+            input#inputName(type="text", placeholder="ex. Mile", name="Name")
+        p Surname
+          input#inputSurname(type="text", placeholder="ex. Zivkovic", name="Surname")
+        p CreatedDate
+            input#inputCreatedDate(type="text", placeholder="ex. 11.06.1989.", name="CreatedDate")
+        p City
+            input#inputCity(type="text", placeholder="ex. Beograd", name="City")
+        p Adress
+            input#inputAdress(type="text", placeholder="ex. Rimska 1", name="Adress")
+        p Phone
+            input#inputPhone(type="text", placeholder="ex. 0601234567", name="Phone")
+
+        p
+            button#btnSubmit(type="submit") submit

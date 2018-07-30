@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    ul
+        - each person, i in persons
+            li
+                = person.Name
+                = person.Surname
+                = person.CreatedDate
+                = person.City
+                = person.Adress
+                = person.Phone
+                = person._id
+                form(action='/persons/#{person._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Delete
+                p
+                    a(href='/persons/#{person._id}/edit') Edit
+                p
+                    a(href='/persons/#{person._id}') Show
